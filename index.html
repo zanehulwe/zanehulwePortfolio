@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#11120f" />
+  <meta name="description" content="Meet Zane Hulwe: building useful things and paying attention to the details." />
+  <title>Zane Hulwe | About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: dark; --bg:#11120f; --paper:#efeee7; --muted:#999b90; --line:#34362f; --lime:#c5f36b; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--paper); font-family:Manrope, sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    .shell { width:min(1160px, calc(100% - 56px)); margin:auto; }
+    header { height:88px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+    .wordmark { font-size:13px; font-weight:800; letter-spacing:-.04em; }
+    .wordmark span { color:var(--lime); }
+    nav { display:flex; gap:32px; color:#b2b3aa; font-size:12px; }
+    nav a:hover { color:var(--lime); }
+    .mono { font:11px 'DM Mono', monospace; letter-spacing:.08em; text-transform:uppercase; }
+    .hero { min-height:640px; display:grid; grid-template-columns:1.35fr .65fr; align-items:center; gap:36px; padding:82px 0 90px; }
+    .eyebrow { color:var(--lime); display:flex; gap:12px; align-items:center; }
+    .eyebrow:before { content:""; width:25px; height:1px; background:var(--lime); }
+    h1 { font-size:clamp(64px, 10.6vw, 142px); line-height:.88; letter-spacing:-.095em; margin:28px 0 30px; font-weight:600; }
+    h1 span { color:var(--lime); }
+    .lede { max-width:490px; color:#b5b6ad; font-size:17px; line-height:1.8; }
+    .hero-aside { align-self:end; padding:0 0 20px 30px; border-left:1px solid var(--line); }
+    .aside-photo-wrap { width:100%; aspect-ratio:1; max-width:240px; margin:0 0 28px auto; position:relative; }
+    .aside-photo-wrap::before { content:""; position:absolute; inset:-8px; border:1px dashed #3a3d33; border-radius:50%; pointer-events:none; transition:border-color .3s ease; }
+    .aside-photo-wrap:hover::before { border-color:var(--lime); }
+    .aside-photo { width:100%; height:100%; object-fit:cover; border-radius:50%; display:block; border:2px solid #34362f; box-shadow:0 12px 32px rgba(0,0,0,.5); transition:border-color .3s ease, transform .3s ease; }
+    .aside-photo-wrap:hover .aside-photo { border-color:var(--lime); transform:scale(1.02); }
+    .aside-title { color:var(--muted); margin:0 0 12px; }
+    .aside-copy { max-width:250px; line-height:1.7; font-size:14px; color:#e4e4db; }
+    .section-label { color:var(--muted); padding:20px 0; border-top:1px solid var(--line); }
+    .about { display:grid; grid-template-columns:.65fr 1.35fr; gap:60px; padding:30px 0 115px; }
+    h2 { font-size:clamp(34px, 5vw, 56px); line-height:1.06; letter-spacing:-.07em; font-weight:500; margin:0; }
+    h2 em { color:var(--lime); font-style:normal; }
+    .about-copy { max-width:590px; color:#b8b9b0; font-size:16px; line-height:1.9; }
+    .about-copy p:first-child { margin-top:0; color:var(--paper); font-size:19px; }
+    .explore { border-top:1px solid var(--line); padding:30px 0 90px; }
+    .explore-heading { display:flex; justify-content:space-between; align-items:end; gap:24px; margin:12px 0 30px; }
+    .explore-heading h2 { max-width:560px; }
+    .explore-heading p { max-width:260px; color:var(--muted); font-size:13px; line-height:1.7; margin:0; }
+    .cards { display:grid; grid-template-columns:repeat(2,1fr); border:1px solid var(--line); }
+    .card { min-height:190px; padding:24px; }
+    .card + .card { border-left:1px solid var(--line); }
+    .card-index { color:var(--lime); }
+    .card h3 { margin:34px 0 10px; font-size:18px; letter-spacing:-.04em; font-weight:600; }
+    .card p { margin:0; color:var(--muted); font-size:13px; line-height:1.75; }
+    .personal-grid { display:grid; grid-template-columns:repeat(2,1fr); border:1px solid var(--line); }
+    .personal-card { min-height:190px; padding:28px 24px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); transition:background-color .2s ease; }
+    .personal-card:hover { background:rgba(197,243,107,.02); }
+    .personal-card:nth-child(2n) { border-right:0; }
+    .personal-card:nth-last-child(-n+2) { border-bottom:0; }
+    .personal-card h3 { margin:34px 0 10px; font-size:18px; letter-spacing:-.04em; font-weight:600; }
+    .personal-card p { margin:0; color:var(--muted); font-size:13px; line-height:1.75; }
+    footer { padding:26px 0 36px; display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:11px; }
+    .status { display:flex; align-items:center; gap:9px; }
+    .status i { display:block; width:6px; height:6px; border-radius:50%; background:var(--lime); box-shadow:0 0 10px #c5f36b88; }
+    @media(max-width:700px) { .shell{width:min(100% - 36px,560px)} header{height:72px} nav{gap:17px;font-size:11px}.hero{grid-template-columns:1fr;min-height:0;padding:75px 0 72px;gap:48px} h1{font-size:clamp(70px,16vw,110px)} .hero-aside{display:grid;grid-template-columns:100px 1fr;align-items:center;column-gap:24px;padding:0;border:0}.aside-photo-wrap{width:100px;margin:0;grid-row:span 2}.aside-title{margin:0}.aside-copy{margin:7px 0 0;font-size:13px}.about{grid-template-columns:1fr;gap:26px;padding-bottom:76px}.explore{padding-bottom:70px}.explore-heading{display:block}.explore-heading p{margin-top:18px}.cards{grid-template-columns:1fr}.card{min-height:0;padding:22px}.card h3{margin-top:19px}.card + .card{border-left:0;border-top:1px solid var(--line)} .personal-grid{grid-template-columns:1fr}.personal-card{min-height:0;padding:22px;border-right:0!important;border-bottom:1px solid var(--line)!important}.personal-card:last-child{border-bottom:0!important}.personal-card h3{margin-top:19px} footer{gap:12px;align-items:flex-start;flex-direction:column} }
+    @media(max-width:390px){nav{gap:11px}.mono{font-size:9px}.shell{width:calc(100% - 32px)}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="wordmark" href="#top">ZH<span>.</span></a>
+      <nav aria-label="Main navigation"><a href="#about">About</a><a href="#approach">My approach</a><a href="#background">Background</a><a href="#personal">Personal</a></nav>
+    </header>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+        <div class="eyebrow mono">A little about me</div>
+          <h1 id="hero-title">Zane<br><span>Hulwe.</span></h1>
+          <p class="lede">Based in Charlotte, North Carolina, I’m a software developer interested in how technology can make everyday tasks simpler. I enjoy moving from an open question to a clear, useful result.</p>
+        </div>
+        <aside class="hero-aside">
+          <div class="aside-photo-wrap">
+            <img src="assets/profile_pic_square.jpg" alt="Zane Hulwe" class="aside-photo" width="240" height="240" loading="eager" fetchpriority="high" />
+          </div>
+          <p class="aside-title mono">In the community</p>
+          <p class="aside-copy">I’ve volunteered in Disaster Relief with the American Red Cross since 2014. It is a long running commitment to supporting people when they need it most.</p>
+        </aside>
+      </section>
+      <div class="section-label mono" id="approach">01 / My approach</div>
+      <section class="about" id="about">
+        <h2>Useful first.<br><em>Thoughtful always.</em></h2>
+        <div class="about-copy">
+          <p>My technical knowledge includes AI, along with programming in Java, Python, and C++.</p>
+          <p>I use Codex and Claude in software development, and pay close attention to interaction details such as clear navigation and consistent behavior when an app changes themes.</p>
+        </div>
+      </section>
+      <section class="explore" id="background" aria-labelledby="explore-title">
+        <div class="section-label mono">02 / Education &amp; recognition</div>
+        <div class="explore-heading">
+          <h2 id="explore-title">A foundation built<br><em>with purpose.</em></h2>
+          <p>Experiences that shaped how I approach new challenges.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="card-index mono">01 / EDUCATION</span>
+            <h3>University of South Carolina</h3>
+            <p>2018 to 2021 · Coursework included algorithms, data structures, object oriented programming, operating systems, machine learning, and core mathematics. Awarded the Governor’s Distinguished Scholarship, providing a full ride for my studies at UofSC.</p>
+          </article>
+          <article class="card">
+            <span class="card-index mono">02 / RECOGNITION</span>
+            <h3>Who’s Who Scholar</h3>
+            <p>WW Scholars describes it as highlighting outstanding students at colleges and universities across America. It is listed on my profile in December 2018.</p>
+          </article>
+        </div>
+      </section>
+      <section class="explore" id="personal" aria-labelledby="personal-title">
+        <div class="section-label mono">03 / Personal</div>
+        <div class="explore-heading">
+          <h2 id="personal-title">Curated habits.<br><em>Curious mind.</em></h2>
+          <p>The standards, interests, and analytical habits that define my day-to-day life.</p>
+        </div>
+        <div class="personal-grid">
+          <article class="personal-card">
+            <span class="card-index mono">01 / DISCIPLINE &amp; SPACE</span>
+            <h3>Super Clean &amp; Organized</h3>
+            <p>I thrive in environments that are immaculate and systematically ordered. From maintaining an orderly workspace to structuring daily workflows, I find that a clean, methodically arranged setting brings mental clarity and sharper focus.</p>
+          </article>
+          <article class="personal-card">
+            <span class="card-index mono">02 / SENSORY ART</span>
+            <h3>A Passion for Fragrance</h3>
+            <p>I love fragrance and the nuanced artistry behind perfumery. I appreciate how top, heart, and base notes evolve, how specific formulations evoke distinct moods, and how a well-chosen scent introduces intention and depth into every day.</p>
+          </article>
+          <article class="personal-card">
+            <span class="card-index mono">03 / ANALYSIS &amp; REASONING</span>
+            <h3>Data Analytical by Nature</h3>
+            <p>I naturally think in data points, patterns, and empirical evidence. Whether untangling complex code, assessing real-world variables, or analyzing trends, I love digging into numbers and distilling messy information into clear, structured logic.</p>
+          </article>
+          <article class="personal-card">
+            <span class="card-index mono">04 / DETAIL &amp; CURIOSITY</span>
+            <h3>Attentive to Detail &amp; Broadly Curious</h3>
+            <p>I’m super attentive to detail—the subtle alignments, micro-interactions, and tiny nuances that are often overlooked rarely escape me. At the same time, I genuinely enjoy a lot of things: exploring eclectic hobbies, diving into new subjects, and staying endlessly curious.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer id="contact">
+      <span>© 2026 Zane Hulwe</span>
+      <span class="status"><i></i> Always learning as I go</span>
+      <a href="https://www.linkedin.com/in/ahmed-hulwe/" target="_blank" rel="noopener noreferrer" aria-label="View Zane Hulwe on LinkedIn">LinkedIn ↗</a>
+      <a href="#top" class="mono">Back to top ↑</a>
+    </footer>
+  </div>
+</body>
+</html>
